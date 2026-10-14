@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Hackathon-1-TrendyShop/css/contac-us.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="cuerpo">
+        <div class="contenedor">
+            <h1>¡PONTE EN CONTACTO CON NOSOTROS!</h1>
+            <p>¿Tienes alguna duda sobre tu pedido, sugerencia o consulta sobre nuestros productos? Rellena el formulario y nuestro equipo te responderá en menos de 24 horas.</p>
+        </div>
+        
+        <div class="cards">
+            <div class="contenedora">
+                <i data-lucide="mail"></i>
+                <div class="info-content">
+                    <p>Correo electronico</p>
+                    <p>soporte@trendyshop.co</p>
+                    <p>Respuesta garantizada</p>
+                </div>
+            </div>
+            
+            <div class="contenedora">
+                <i data-lucide="phone"></i>
+                <div class="info-content">
+                    <p>Telefono/Whatsaap</p>
+                    <p>+573185560192</p>
+                    <p>Lun-Sab: 08:00 am - 07:00 pm</p>
+                </div>
+            </div>
+            
+            <div class="contenedora">
+                <i data-lucide="map-pin"></i>
+                <div class="info-content">
+                    <p>Oficina Principal</p>
+                    <p>Bogota, Colombia</p>
+                    <p>Calle 41 sur #70-30</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedorb">
+            <form id="formularioContacto" alert('¡Mensaje enviado con éxito!');">
+                <p>ENVIANOS UN MENSAJE</p>
+                <p>los campos marcados con * son obligatorios</p>
+                
+                <div>
+                    <label>Nombre Completo *</label>
+                    <input type="text" required>
+                </div>
+
+                <div>
+                    <label>Correo electronico *</label>
+                    <input type="email" required>
+                </div>
+
+                <div>
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea name="mensaje" id="mensaje" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-enviar">
+                    Enviar Mensaje 
+                    <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+                </button>
+                <p id="mensajeConfirmacion" style="display: none; color: #25183A; background-color: #FCE14B; padding: 10px; border-radius: 5px; margin-top: 15px; font-weight: bold; text-align: center;">
+        ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
+    </p>
+            </form>
+        </div>
+    </div>
+
+    
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/Hackathon-1-TrendyShop/js/contact.js"></script>
+</body>
+</html>
