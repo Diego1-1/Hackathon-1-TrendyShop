@@ -1,0 +1,29 @@
+/* Botón del Carrito con estilo circular como el login */
+.cart-btn {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-glass-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  position: relative;
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+/* Efecto Hover: Fondo amarillo y texto/icono oscuro */
+.cart-btn:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* Asegurar el tamaño interno del icono dentro del círculo */
+.cart-btn .cart-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  display: block;
+}
