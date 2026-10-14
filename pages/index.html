@@ -7,43 +7,15 @@
   <title>Trendyshop - Inicio</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/about-us.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
   <!-- Navbar Principal Fijo -->
-  <header class="navbar" id="mainNavbar">
-    <a href="index.html" class="logo" aria-label="Mi Cancha Inicio">
-      <img src="../assets/img/mi_cancha_prototipo_logo.png" alt="Logo Mi Cancha" class="logo-marca">
-      <span>TrendyShop</span>
-    </a>
-
-    <!-- Botón Menú Hamburguesa para Móviles -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav aria-label="Principal">
-      <ul class="menu" id="navMenu">
-        <li><a href="index.html" class="activo">Inicio</a></li>
-        <li><a href="about-us.html">Nosotros</a></li>
-        <li><a href="#">Deportes</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav>
-
-    <div class="nav-actions">
-      <a href="dashboar.html" class="login" aria-label="Iniciar sesión">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="8" r="4" />
-          <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
-        </svg>
-      </a>
-    </div>
-  </header>
+    <!--  -->
+    <app-navbar></app-navbar>
 
   <!-- Section con Video de Fondo exclusivo para Inicio -->
   <section class="hero-inicio">
@@ -67,7 +39,8 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <!-- <footer class="site-footer">
+
     <div class="footer-container">
       <div class="footer-brand">
         <a href="index.html" class="footer-logo">
@@ -111,9 +84,11 @@
     <div class="footer-bottom">
       <p>&copy; 2026 Mi Cancha. Todos los derechos reservados.</p>
     </div>
-  </footer>
-
+  </footer> -->
+<app-footer></app-footer>
   <script src="../js/about-us.js"></script>
+  <script type="module" src="../components/navbar.js"></script>
+  <script type="module" src="../components/footer.js"></script>
 </body>
 
 </html>

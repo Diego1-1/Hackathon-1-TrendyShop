@@ -105,13 +105,14 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem var(--page-padding-x);
-  background: transparent;
+  padding: 0.8rem var(--page-padding-x);
+  background: var(--color-bg);
   transition: all var(--transition-base);
 }
 
+
 /* Estado con scroll: fondo morado con textura de líneas diagonales */
-.navbar.scrolled {
+ .navbar.scrolled {
   padding: 0.8rem var(--page-padding-x);
   background-color: var(--color-surface);
   background-image:
@@ -119,20 +120,20 @@ a {
     linear-gradient(135deg, var(--color-surface-glass), var(--color-surface-glass-deep));
   box-shadow: var(--shadow-navbar);
   backdrop-filter: blur(8px);
-}
+} 
 
 .logo {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: var(--color-text);
   text-shadow: var(--shadow-text-md);
 }
 
 .logo-marca {
-  width: 38px;
+  width: 50px;
   height: 38px;
   border-radius: var(--radius-md);
   object-fit: contain;
@@ -155,6 +156,7 @@ a {
   letter-spacing: 0.03em;
   border-radius: var(--radius-sm);
   text-shadow: var(--shadow-text-sm);
+  text-decoration: none;
   transition: color var(--transition-fast), background var(--transition-fast);
 }
 
