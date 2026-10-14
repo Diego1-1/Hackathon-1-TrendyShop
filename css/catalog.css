@@ -1,0 +1,197 @@
+body {
+  background-color: #160a2b; /* Tono oscuro profundo similar al de la referencia */
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+  padding-top: 80px; /* Espacio para el navbar fijo */
+}
+
+.shop-container {
+  display: grid;
+  grid-template-columns: 900px 1fr;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* ===== Contenido Principal & Banner Eclipse ===== */
+.shop-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.banner-eclipse {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: linear-gradient(135deg, #321959 0%, #160a2b 100%), url('../assets/img/banner-eclipse-bg.jpg') center/cover no-repeat;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.banner-eclipse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(120, 60, 180, 0.3) 0%, rgba(15, 5, 30, 0.7) 100%);
+}
+
+.banner-text {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-text h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.btn-ver-ahora {
+  display: inline-block;
+  background-color: #ffda55;
+  color: #160a2b;
+  font-weight: 700;
+  padding: 0.7rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-ver-ahora:hover {
+  background-color: #ffe67b;
+  transform: scale(1.03);
+}
+
+/* ===== Grid de Productos (Preparado para la API) ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* ===== Tarjeta de Producto (Card) ===== */
+.product-card {
+  background: rgba(54, 33, 89, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffda55;
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background-color: #24143d;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ffda55;
+  color: #160a2b;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+
+.product-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.product-price-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.btn-cart {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cart:hover {
+  background-color: #ffda55;
+  color: #160a2b;
+}
+
+.btn-comprar {
+  width: 100%;
+  background-color: #ffda55;
+  color: #160a2b;
+  border: none;
+  padding: 0.8rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-comprar:hover {
+  background-color: #ffe67b;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .shop-container {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .shop-sidebar {
+    display: none; /* Se puede alternar con JS para menú móvil de filtros */
+  }
+}
