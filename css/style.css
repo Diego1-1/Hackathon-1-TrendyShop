@@ -156,6 +156,7 @@ a {
   border-radius: var(--radius-sm);
   text-shadow: var(--shadow-text-sm);
   transition: color var(--transition-fast), background var(--transition-fast);
+  text-decoration: none;
 }
 
 .menu a:hover {
@@ -437,7 +438,7 @@ a {
 
 .footer-column a:hover {
   color: var(--color-accent);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .footer-bottom {
