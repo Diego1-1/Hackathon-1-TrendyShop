@@ -296,6 +296,11 @@ a {
   transition: transform 0.2s, background-color 0.2s;
 }
 
+.card:hover {
+    transform: scale(1.05);
+    background-color: transparent;
+}
+
 /* 2. Reducir ligeramente la imagen para dar espacio al texto */
 .card img, 
 .products-grid img,
