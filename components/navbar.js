@@ -1,7 +1,9 @@
 import { links } from "./const.js";
+import { countItems } from "../services/cart.js";
+
 export class Navbar extends HTMLElement {
     static get observedAttributes(){
-        return ['active', 'cart-count'];
+        return ['active'];
     }
 
     links = links;
@@ -11,6 +13,15 @@ export class Navbar extends HTMLElement {
         this.renderMenu();
         this.bindEvents();
         this.updateCar();
+
+        this._onCartUpdated = () => this.updateCar();
+        window.addEventListener('cart-updated', this._onCartUpdated);
+        window.addEventListener('storage',this._onCartUpdated);
+    }
+
+    disconnectedCallback(){
+     window.removeEventListener('cart-updated',this._onCartUpdated);
+     window.removeEventListener('storage', this._onCartUpdated)
     }
 
     attributeChangedCallback(names, oldValue, newValue) {
@@ -24,7 +35,7 @@ export class Navbar extends HTMLElement {
     }
 
     get amount(){
-        return parseInt(this.getAttribute('cart-count') || '0', 10);
+        return countItems();
     }
 
     async loadTemplate() {
@@ -65,13 +76,18 @@ export class Navbar extends HTMLElement {
             });
         }
 
-        const cartBtn = this.querySelector('#cartBtn');
+       const cartBtn = this.querySelector('#cartBtn');
         if (cartBtn) {
-            cartBtn.addEventListener('click', () => {
-                this.dispatchEvent(new CustomEvent('cart-click', {bubbles: true}));
-            });
-        }
+        cartBtn.addEventListener('click', () => {
+            this.dispatchEvent(new CustomEvent('cart-click', { bubbles: true }));
+            window.location.href = this.cartHref;
+        });
+}
     }
+
+    get cartHref() {
+  return this.getAttribute('cart-href') || 'cart.html';
+}
 
     updateCar(){
         const badge = this.querySelector('#cartBadge');
