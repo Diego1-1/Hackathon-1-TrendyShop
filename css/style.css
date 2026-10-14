@@ -268,14 +268,32 @@ a {
 
 /* Tarjeta individual */
 .card {
+  color: white;
   flex: 1 1 250px;         
   max-width: 280px;        
-  height: 270px;             /* Mantiene la altura fija unificada */
   background-color: #1e1e24; 
   border-radius: 8px;
   overflow: hidden;        
   display: flex;
-  flex-direction: column;    /* Organiza los elementos en vertical */
+  flex-direction: column;
+  border: 1px solid #333;
+  height: auto;
+  padding-bottom: 5px;    /* Margen interno inferior para contener el botón cómodamente */
+}
+
+.btn-card-inicio {
+  display: block;
+  background-color: #FCE14B;
+  color: #0A0314;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 25px;
+  width: 70%;                 /* Bajamos del 85% al 70% para que sea más corto horizontalmente */
+  padding: 8px 0;             /* Reduce el grosor vertical a solo 8px arriba y abajo */
+  margin: 10px auto;          /* Centra horizontalmente y reduce la separación vertical */
+  text-align: center;         /* Centra el texto "Explora" perfectamente en medio */
+  border: none;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 /* 2. Reducir ligeramente la imagen para dar espacio al texto */
