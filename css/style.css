@@ -219,63 +219,178 @@ a {
 }
 
 /* ==========================================================================
-   HERO CON VIDEO
+   HERO BANNER
    ========================================================================== */
-.hero-inicio {
-  position: relative;
-  width: 100%;
-  height: 70vh;
-  min-height: 450px;
-  overflow: hidden;
-  display: flex;
+/* Contenedor principal del Banner */
+.banner-promocional{
+  width: 70%;
+  margin-top: 80px;         
+  margin-bottom: auto;       
+  margin-left: auto;         
+  margin-right: auto;   
+  position: relative;     
+  
+  display: flex;             
+  min-height: 200px;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  text-align: start;
+  color: #ffffff;
+  border-radius: 12px; 
+  overflow: hidden;
+  
+  background-image: url('/assets/img/banner.jpg'); 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-attachment: scroll; 
+  background-position: right center;
 }
 
-.hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
+.grid{
+  display: flex;            /* Activa el diseño en filas */
+  flex-direction: row;      /* Pone los elementos uno al lado del otro */
+  flex-wrap: wrap;          /* Si no caben en la pantalla, saltan a la siguiente línea */
+  gap: 20px;                /* Deja una separación limpia de 20px entre cada tarjeta */
+  justify-content: center;  /* Centra el grupo de tarjetas en la pantalla */
+  padding: 30px 0;          /* Espaciado arriba y abajo */
+  width: 100%;              /* Asegura que ocupe todo el ancho disponible */
+}
+
+.card-header,
+.img-container {
+  background-color: transparent;
+  background: none;
+  border-bottom: none;
+  padding: 0;
+}
+
+
+/* Tarjeta individual */
+.card {
+  color: white;
+  flex: 1 1 250px;         
+  max-width: 280px;        
+  background-color: #1e1e24; 
+  border-radius: 8px;
+  overflow: hidden;        
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
   height: auto;
-  object-fit: cover;
-  z-index: 1;
+  padding-bottom: 5px;    /* Margen interno inferior para contener el botón cómodamente */
 }
 
-/* Capa oscura sobre el video para dar contraste al texto */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: var(--color-overlay);
-  z-index: 2;
-}
-
-.hero-contenido-inicio {
-  position: relative;
-  z-index: 3;
-  color: var(--color-text);
-  padding: 0 1rem;
-  max-width: 800px;
-}
-
-.hero-contenido-inicio .hero-titulo {
-  font-size: clamp(2.3rem, 6vw, 4rem);
-  font-family: var(--font-main);
+.btn-card-inicio {
+  display: block;
+  background-color: #FCE14B;
+  color: #0A0314;
+  text-decoration: none;
   font-weight: 700;
-  margin-bottom: 0.8rem;
-  text-shadow: var(--shadow-text-lg);
+  border-radius: 25px;
+  width: 70%;                 /* Bajamos del 85% al 70% para que sea más corto horizontalmente */
+  padding: 8px 0;             /* Reduce el grosor vertical a solo 8px arriba y abajo */
+  margin: 10px auto;          /* Centra horizontalmente y reduce la separación vertical */
+  text-align: center;         /* Centra el texto "Explora" perfectamente en medio */
+  border: none;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
-.hero-subtitulo {
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  color: var(--color-text-muted);
-  margin-bottom: 1.8rem;
-  text-shadow: var(--shadow-text-lg);
+/* 2. Reducir ligeramente la imagen para dar espacio al texto */
+.card img, 
+.products-grid img,
+.card-img-top {
+  width: 100% ;
+  height: 200px;  /* Bajamos de 220px a 200px para liberar espacio */
+  object-fit: cover; 
+  background-color: transparent; 
+  padding: 0;        
+  flex-shrink: 0;            /* Evita de forma estricta que la imagen crezca más de lo debido */
 }
+
+/* 3. Asegurar el contenedor del texto para que sea visible */
+.card-body, 
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;              /* Toma de forma obligatoria todo el espacio restante (180px) */
+  justify-content: flex-start; /* Alinea los textos arriba dentro de su zona */
+  overflow: hidden;          /* Evita desbordamientos extraños */
+}
+
+
+/* Capa oscura superpuesta (Overlay) para mejorar el contraste del texto */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 3, 20, 0.6); /* Color negro traslúcido (ajusta el 0.6 para más o menos oscuridad) */
+    z-index: 1;
+}
+
+/* Contenido del texto */
+.banner-content {
+    position: relative;
+    z-index: 2; /* Lo posiciona por encima de la capa oscura */
+    max-width: 600px;
+    padding: 20px;
+}
+
+.banner-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #FCE14B; /* Amarillo de acento */
+    margin-bottom: 10px;
+    display: block;
+}
+
+.banner-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.banner-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Botón del Banner */
+.btn-banner {
+    display: inline-block;
+    background-color: #FCE14B;
+    color: #0A0314;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-banner:hover {
+    transform: scale(1.05);
+    background-color: #fff;
+}
+
+.featured-products{
+  display: flex;            /* Activa el diseño en filas (horizontal) */
+  flex-direction: row;      /* Fuerza a que los elementos se pongan uno al lado del otro */
+  flex-wrap: wrap;          /* Si no caben en la pantalla, saltan a la siguiente línea abajo */
+  gap: 20px;                /* Agrega una separación limpia de 20px entre cada tarjeta */
+  justify-content: center;  /* Centra las tarjetas horizontalmente en la página */
+  padding: 20px 0;          /* Espaciado interno arriba y abajo */
+}
+
+.card{
+  flex: 1 1 250px;         /* Permite que crezcan y se encojan, con un tamaño base de 250px */
+  max-width: 300px;        /* Evita que se hagan gigantes en pantallas grandes */
+}
+
 
 /* ==========================================================================
    FOOTER
