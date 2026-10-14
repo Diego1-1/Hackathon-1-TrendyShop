@@ -1,4 +1,5 @@
 import { links } from "./const.js";
+
 export class Navbar extends HTMLElement {
     static get observedAttributes(){
         return ['active', 'cart-count'];
@@ -11,6 +12,15 @@ export class Navbar extends HTMLElement {
         this.renderMenu();
         this.bindEvents();
         this.updateCar();
+
+        this._onCartUpdated = () => this.updateCar();
+        window.addEventListener('cart-updated', this._onCartUpdated);
+        window.addEventListener('storage',this._onCartUpdated);
+    }
+
+    disconectedCallback(){
+     window.removeEventListener('cart-updated',this._onCartUpdated);
+     window.removeEventListener('storage', this._onCartUpdated)
     }
 
     attributeChangedCallback(names, oldValue, newValue) {
@@ -24,7 +34,7 @@ export class Navbar extends HTMLElement {
     }
 
     get amount(){
-        return parseInt(this.getAttribute('cart-count') || '0', 10);
+        return amountItems();
     }
 
     async loadTemplate() {
