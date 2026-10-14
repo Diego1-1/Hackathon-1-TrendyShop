@@ -1,0 +1,135 @@
+.cart-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.cart-page h1 {
+  margin-bottom: 1.5rem;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.cart-item-info h2 {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+}
+
+.cart-item-info p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.cart-item-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-item-qty button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.cart-item-qty span {
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.cart-item-subtotal {
+  font-weight: 700;
+  margin: 0;
+  min-width: 80px;
+  text-align: right;
+}
+
+.cart-item > [data-action="remove"] {
+  background: none;
+  border: none;
+  color: #e5484d;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.cart-summary {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-total {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.cart-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+}
+
+/* Móvil: la fila se apila en dos líneas */
+@media (max-width: 600px) {
+  .cart-item {
+    grid-template-columns: 70px 1fr;
+  }
+  .cart-item-qty,
+  .cart-item-subtotal,
+  .cart-item > [data-action="remove"] {
+    grid-column: 2;
+  }
+  .cart-item-subtotal {
+    text-align: left;
+  }
+  .cart-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+}
