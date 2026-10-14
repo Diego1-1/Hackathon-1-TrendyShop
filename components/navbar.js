@@ -76,13 +76,18 @@ export class Navbar extends HTMLElement {
             });
         }
 
-        const cartBtn = this.querySelector('#cartBtn');
+       const cartBtn = this.querySelector('#cartBtn');
         if (cartBtn) {
-            cartBtn.addEventListener('click', () => {
-                this.dispatchEvent(new CustomEvent('cart-click', {bubbles: true}));
-            });
-        }
+        cartBtn.addEventListener('click', () => {
+            this.dispatchEvent(new CustomEvent('cart-click', { bubbles: true }));
+            window.location.href = this.cartHref;
+        });
+}
     }
+
+    get cartHref() {
+  return this.getAttribute('cart-href') || 'cart.html';
+}
 
     updateCar(){
         const badge = this.querySelector('#cartBadge');
