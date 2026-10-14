@@ -1,8 +1,9 @@
 import { links } from "./const.js";
+import { countItems } from "../services/cart.js";
 
 export class Navbar extends HTMLElement {
     static get observedAttributes(){
-        return ['active', 'cart-count'];
+        return ['active'];
     }
 
     links = links;
@@ -18,7 +19,7 @@ export class Navbar extends HTMLElement {
         window.addEventListener('storage',this._onCartUpdated);
     }
 
-    disconectedCallback(){
+    disconnectedCallback(){
      window.removeEventListener('cart-updated',this._onCartUpdated);
      window.removeEventListener('storage', this._onCartUpdated)
     }
@@ -34,7 +35,7 @@ export class Navbar extends HTMLElement {
     }
 
     get amount(){
-        return amountItems();
+        return countItems();
     }
 
     async loadTemplate() {
